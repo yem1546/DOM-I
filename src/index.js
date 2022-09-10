@@ -40,3 +40,69 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+
+const header = document.querySelector("header")
+
+const mainNav = document.querySelector("header nav")
+mainNav.style.color = "grey"
+const navItems = mainNav.querySelectorAll("a")
+
+navItems.forEach((v, i) => {
+  navItems[i].textContent = siteContent["nav"][`nav-item-${i+1}`]
+  navItems[i].classList.add("italic")
+})
+
+const navImg = header.querySelector("#logo-img")
+navImg.src = siteContent["images"]["logo-img"]
+
+const ctaHead = document.querySelector("h1")
+ctaHead.textContent = siteContent.cta.h1
+
+const ctaButton = document.querySelector(".cta button")
+ctaButton.textContent = siteContent.cta.button
+
+const ctaImg = document.querySelector("#cta-img")
+ctaImg.src = siteContent["images"]["cta-img"]
+
+const footerNav = document.querySelector("footer a")
+console.log(footerNav)
+footerNav.textContent = siteContent["footer"]["copyright"]
+footerNav.classList.add("bold")
+
+const content = document.querySelectorAll(".text-content")
+const features = content.item(0)
+const about = content.item(1)
+const services = content.item(2)
+const product = content.item(3)
+const vision = content.item(4)
+
+features.firstElementChild.textContent = siteContent["main-content"]["features-h4"]
+features.lastElementChild.textContent = siteContent["main-content"]["features-content"]
+
+about.firstElementChild.textContent = siteContent["main-content"]["about-h4"]
+about.lastElementChild.textContent = siteContent["main-content"]["about-content"]
+
+services.firstElementChild.textContent = siteContent["main-content"]["services-h4"]
+services.lastElementChild.textContent = siteContent["main-content"]["services-content"]
+
+product.firstElementChild.textContent = siteContent["main-content"]["product-h4"]
+product.lastElementChild.textContent = siteContent["main-content"]["product-content"]
+
+vision.firstElementChild.textContent = siteContent["main-content"]["vision-h4"]
+vision.lastElementChild.textContent = siteContent["main-content"]["vision-content"]
+
+const accentImg = document.querySelector(".middle-img")
+accentImg.src = siteContent["images"]["accent-img"]
+
+const contact = document.querySelector(".contact")
+const contactH = contact.querySelector("h4")
+const address = contactH.nextElementSibling
+const phone = address.nextElementSibling
+const email = phone.nextElementSibling
+
+
+contactH.textContent = siteContent["contact"]["contact-h4"]
+address.textContent = siteContent["contact"]["address"]
+email.textContent = siteContent["contact"]["email"]
+phone.textContent = siteContent["contact"]["phone"]
+
